@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#0f0f1a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1024" height="1024" rx="180" ry="180" fill="url(#bg)"/>
+
+  <!-- Crossed bones -->
+  <g transform="translate(512, 620)" fill="#e8e0d4" stroke="#0f0f1a" stroke-width="8">
+    <!-- Bone 1 (top-left to bottom-right) -->
+    <g transform="rotate(-35)">
+      <rect x="-220" y="-28" width="440" height="56" rx="28"/>
+      <circle cx="-220" cy="-20" r="32"/>
+      <circle cx="-220" cy="20" r="32"/>
+      <circle cx="220" cy="-20" r="32"/>
+      <circle cx="220" cy="20" r="32"/>
+    </g>
+    <!-- Bone 2 (top-right to bottom-left) -->
+    <g transform="rotate(35)">
+      <rect x="-220" y="-28" width="440" height="56" rx="28"/>
+      <circle cx="-220" cy="-20" r="32"/>
+      <circle cx="-220" cy="20" r="32"/>
+      <circle cx="220" cy="-20" r="32"/>
+      <circle cx="220" cy="20" r="32"/>
+    </g>
+  </g>
+
+  <!-- Skull -->
+  <g transform="translate(512, 400)">
+    <!-- Skull shape -->
+    <ellipse cx="0" cy="-20" rx="185" ry="200" fill="#e8e0d4" stroke="#0f0f1a" stroke-width="8"/>
+    <!-- Jaw -->
+    <ellipse cx="0" cy="140" rx="130" ry="70" fill="#e8e0d4" stroke="#0f0f1a" stroke-width="8"/>
+    <!-- Jaw overlap cover -->
+    <ellipse cx="0" cy="100" rx="150" ry="60" fill="#e8e0d4"/>
+
+    <!-- Red bandana -->
+    <path d="M-185,-40 Q-180,-100 -140,-130 Q-60,-175 0,-180 Q60,-175 140,-130 Q180,-100 185,-40 Q180,-70 140,-95 Q60,-135 0,-140 Q-60,-135 -140,-95 Q-180,-70 -185,-40 Z" fill="#c0392b" stroke="#0f0f1a" stroke-width="6"/>
+    <!-- Bandana knot -->
+    <path d="M185,-40 Q210,-20 240,-50 Q250,-70 235,-85 Q220,-60 200,-50 Q190,-45 185,-40 Z" fill="#c0392b" stroke="#0f0f1a" stroke-width="4"/>
+    <path d="M185,-40 Q215,-30 230,-10 Q240,5 225,10 Q215,-5 200,-20 Q190,-35 185,-40 Z" fill="#a93226" stroke="#0f0f1a" stroke-width="4"/>
+    <!-- Bandana dots -->
+    <circle cx="-80" cy="-120" r="8" fill="#e8e0d4" opacity="0.5"/>
+    <circle cx="0" cy="-135" r="8" fill="#e8e0d4" opacity="0.5"/>
+    <circle cx="80" cy="-120" r="8" fill="#e8e0d4" opacity="0.5"/>
+    <circle cx="-40" cy="-130" r="6" fill="#e8e0d4" opacity="0.4"/>
+    <circle cx="40" cy="-130" r="6" fill="#e8e0d4" opacity="0.4"/>
+
+    <!-- Eye socket left -->
+    <ellipse cx="-70" cy="-10" rx="52" ry="48" fill="#0f0f1a"/>
+    <!-- Eye socket right -->
+    <ellipse cx="70" cy="-10" rx="52" ry="48" fill="#0f0f1a"/>
+
+    <!-- Eye patch on left eye -->
+    <ellipse cx="-70" cy="-10" rx="58" ry="54" fill="#1a1a2e" stroke="#2c2c3e" stroke-width="6"/>
+    <!-- Eye patch strap -->
+    <line x1="-120" y1="-40" x2="-185" y2="-80" stroke="#2c2c3e" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- Right eye glow -->
+    <ellipse cx="70" cy="-10" rx="20" ry="18" fill="#c0392b" opacity="0.8"/>
+    <ellipse cx="70" cy="-14" rx="8" ry="6" fill="#e8e0d4" opacity="0.6"/>
+
+    <!-- Nose -->
+    <path d="M-15,50 L0,30 L15,50 Z" fill="#0f0f1a" opacity="0.8"/>
+
+    <!-- Teeth -->
+    <g fill="#e8e0d4" stroke="#0f0f1a" stroke-width="3">
+      <rect x="-60" y="130" width="28" height="35" rx="4"/>
+      <rect x="-28" y="128" width="28" height="40" rx="4"/>
+      <rect x="4" y="128" width="28" height="40" rx="4"/>
+      <rect x="36" y="130" width="28" height="35" rx="4"/>
+    </g>
+    <!-- Missing tooth gap -->
+    <rect x="-62" y="128" width="32" height="6" fill="#0f0f1a"/>
+    <rect x="34" y="128" width="32" height="6" fill="#0f0f1a"/>
+    <!-- Teeth line -->
+    <line x1="-65" y1="128" x2="68" y2="128" stroke="#0f0f1a" stroke-width="5"/>
+  </g>
+</svg>
