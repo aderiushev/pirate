@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://c1blasterbolt"]
+
+[ext_resource type="Script" path="res://scripts/blaster_bolt.gd" id="1_script"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(16, 6)
+
+[node name="BlasterBolt" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_script")
+
+; === OUTER GLOW (cyan, larger, transparent) ===
+[node name="Glow" type="Polygon2D" parent="."]
+z_index = -1
+color = Color(0, 0.7, 1, 0.25)
+polygon = PackedVector2Array(-10, -5, 10, -5, 12, -3, 14, 0, 12, 3, 10, 5, -10, 5, -12, 3, -14, 0, -12, -3)
+
+; === MAIN BOLT (cyan laser) ===
+[node name="Visual" type="Polygon2D" parent="."]
+color = Color(0, 0.9, 1, 1)
+polygon = PackedVector2Array(-8, -2, 8, -2, 10, 0, 8, 2, -8, 2, -10, 0)
+
+; === WHITE CORE (inner highlight) ===
+[node name="Core" type="Polygon2D" parent="."]
+z_index = 1
+color = Color(1, 1, 1, 0.9)
+polygon = PackedVector2Array(-6, -1, 6, -1, 7, 0, 6, 1, -6, 1, -7, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c1swordslash"]
+
+[ext_resource type="Script" path="res://scripts/sword_slash.gd" id="1_script"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(40, 30)
+
+[node name="SwordSlash" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_script")
+
+; === SLASH ARC (white semi-transparent) ===
+[node name="SlashArc" type="Polygon2D" parent="."]
+color = Color(1, 1, 1, 0.7)
+polygon = PackedVector2Array(0, -15, 8, -13, 14, -10, 18, -5, 20, 0, 18, 5, 14, 10, 8, 13, 0, 15, 4, 10, 7, 5, 8, 0, 7, -5, 4, -10)
+
+; === SLASH TRAIL (orange glow) ===
+[node name="SlashTrail" type="Polygon2D" parent="."]
+z_index = -1
+color = Color(1, 0.9, 0.5, 0.3)
+polygon = PackedVector2Array(-5, -18, 10, -15, 20, -8, 24, 0, 20, 8, 10, 15, -5, 18, 0, 12, 5, 6, 6, 0, 5, -6, 0, -12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, 0)
+shape = SubResource("RectangleShape2D_1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

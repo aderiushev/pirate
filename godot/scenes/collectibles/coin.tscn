@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://coinscene01"]
+
+[ext_resource type="Script" path="res://scripts/coin.gd" id="1_script"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_coin"]
+radius = 20.0
+
+[node name="Coin" type="Area2D"]
+collision_layer = 0
+collision_mask = 1
+script = ExtResource("1_script")
+
+[node name="GoldCircle" type="Polygon2D" parent="."]
+color = Color(1, 0.85, 0.1, 1)
+polygon = PackedVector2Array(14, 0, 12, 7, 7, 12, 0, 14, -7, 12, -12, 7, -14, 0, -12, -7, -7, -12, 0, -14, 7, -12, 12, -7)
+
+[node name="InnerCircle" type="Polygon2D" parent="."]
+color = Color(1, 0.75, 0.05, 1)
+polygon = PackedVector2Array(10, 0, 9, 5, 5, 9, 0, 10, -5, 9, -9, 5, -10, 0, -9, -5, -5, -9, 0, -10, 5, -9, 9, -5)
+
+[node name="Shine" type="Polygon2D" parent="."]
+color = Color(1, 1, 1, 0.6)
+polygon = PackedVector2Array(-2, -10, 2, -10, 4, -6, 0, -4, -4, -6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_coin")

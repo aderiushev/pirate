@@ -1,0 +1,6 @@
+.DS_Store
+.idea/
+firebase-debug.log
+godot/.godot/
+godot/export_credentials.cfg
+CLAUDE.md

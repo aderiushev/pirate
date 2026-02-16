@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://shieldpwrup1"]
+
+[ext_resource type="Script" path="res://scripts/shield_power_up.gd" id="1_script"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pu"]
+radius = 22.0
+
+[node name="ShieldPowerUp" type="Area2D"]
+collision_layer = 0
+collision_mask = 1
+script = ExtResource("1_script")
+
+; Blue glow
+[node name="Glow" type="Polygon2D" parent="."]
+z_index = -1
+modulate = Color(1, 1, 1, 0.3)
+color = Color(0.3, 0.6, 1.0, 0.5)
+polygon = PackedVector2Array(18, 0, 13, 13, 0, 18, -13, 13, -18, 0, -13, -13, 0, -18, 13, -13)
+
+; Blue star shape
+[node name="Star" type="Polygon2D" parent="."]
+color = Color(0.3, 0.7, 1.0, 1)
+polygon = PackedVector2Array(0, -14, 4, -5, 13, -4, 6, 3, 8, 12, 0, 7, -8, 12, -6, 3, -13, -4, -4, -5)
+
+; White center
+[node name="Center" type="Polygon2D" parent="."]
+color = Color(0.8, 0.9, 1.0, 0.8)
+polygon = PackedVector2Array(0, -6, 3, -2, 0, 3, -3, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pu")
